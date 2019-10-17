@@ -67,13 +67,16 @@ if (keystorePropertiesFile.exists()) {
 
             signingConfig signingConfigs.release
 
-            //minifyEnabled false
-            //useProguard false
+            minifyEnabled false
+            useProguard true
 
-            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+         
+            dependencies {
+	        implementation 'com.android.support:support-fragment:28.0.0'
+	        }
         }
-   }
+    }
 }
 
 flutter {
