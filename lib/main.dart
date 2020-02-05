@@ -45,9 +45,7 @@ class _HomeState extends State<Home> {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("Pessoas: $_people",
-                style: TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.bold)),
+            Text("Pessoas: $_people", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -79,10 +77,11 @@ class _HomeState extends State<Home> {
             ),
             Text(
               _infoText,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontStyle: FontStyle.italic,
-                  fontSize: 30.0),
+              style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontSize: 30.0),
+            ),
+            Text(
+              'Versão_0.0.7777',
+              style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontSize: 30.0),
             )
           ],
         )
