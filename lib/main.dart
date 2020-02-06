@@ -81,7 +81,7 @@ class _HomeState extends State<Home> {
             ),
             Padding(
                   padding: EdgeInsets.all(20.0),
-                  child: child: Text(
+                  child: Text(
                       'Versão 0.0.2107',
                       style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontSize: 14.0),
                     ),
