@@ -79,10 +79,18 @@ class _HomeState extends State<Home> {
               _infoText,
               style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontSize: 30.0),
             ),
-            Text(
-              'Versão_0.0.7777',
-              style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontSize: 30.0),
-            )
+            Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: FlatButton(
+                    child: Text(
+                      'Versão 0.0.2107',
+                      style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontSize: 14.0),
+                    ),
+                    onPressed: () {
+                      _changePeople(-1);
+                    },
+                  ),
+                )
           ],
         )
       ],
