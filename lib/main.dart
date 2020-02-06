@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:package_info/package_info.dart';
 
 void main() {
   runApp(MaterialApp(
       //MaterialApp é para chamar o Material Design
       title: "Contador de Pessoas",
       home: Home()));
+}
+
+Future<String> getVersionNumber() async {
+  final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  final String version = packageInfo.version;
+  final String versionApp = 'Versão $version';
+  return versionApp;
 }
 
 class Home extends StatefulWidget {
@@ -81,11 +89,15 @@ class _HomeState extends State<Home> {
             ),
             Padding(
               padding: EdgeInsets.all(20.0),
-              child: Text(
-                  'Versão 0.0.2107',
-                style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontSize: 14.0),
+              child: FutureBuilder(
+                future: getVersionNumber(),
+                builder: (BuildContext context, AsyncSnapshot<String> snapshot) => Text(
+                  snapshot.hasData ? snapshot.data : 'Abrindo...',
+                  style: const TextStyle(color: Colors.white, fontSize: 12.0),
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),     
+            ),
           ],
         )
       ],
